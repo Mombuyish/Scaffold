@@ -1,0 +1,32 @@
+{
+    "name": "yish/scaffold",
+    "description": "Super fast build CRUD resource for Laravel.",
+    "license": "MIT",
+    "require": {
+        "laravel/laravel": "^5.6"
+    },
+    "authors": [
+        {
+            "name": "Yish",
+            "email": "mombuartworks@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yish\\Scaffold\\": "src"
+        }
+    },
+    "extra": {
+        "component": "package",
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Yish\\Scaffold\\ScaffoldServiceProvider"
+            ]
+        }
+    },
+
+    "minimum-stability": "stable"
+}

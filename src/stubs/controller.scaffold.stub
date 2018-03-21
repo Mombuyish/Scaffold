@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\DummyClassRequest;
+use App\DummyClass;
+
+class DummyClassController extends Controller
+{
+    public function index()
+    {
+        $DummyProp = DummyClass::latest()->paginate(12);
+
+        return view('DummyLowerClass.index', compact('DummyLowerClass'));
+    }
+
+    public function create()
+    {
+        return view('DummyLowerClass.create');
+    }
+
+    public function store(DummyClassRequest $request)
+    {
+        DummyClass::create($request->all());
+
+        return redirect()->route('DummyLowerClass.index');
+    }
+
+    public function edit(DummyClass $DummyProp)
+    {
+        return view('DummyLowerClass.edit', compact('DummyLowerClass'));
+    }
+
+    public function update(DummyClassRequest $request, DummyClass $DummyProp)
+    {
+        $DummyProp->update($request->all());
+
+        return redirect()->route('DummyLowerClass.show', $DummyProp->id);
+    }
+
+    public function show(DummyClass $DummyProp)
+    {
+        return view('DummyLowerClass.show', compact('DummyLowerClass'));
+    }
+
+    public function destroy(DummyClass $DummyProp)
+    {
+        $DummyProp->delete();
+
+        return redirect()->route('DummyLowerClass.index');
+    }
+}
