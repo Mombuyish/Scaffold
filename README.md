@@ -7,8 +7,13 @@ Super fast build CRUD resource for Laravel.
 ```
 $ composer require yish/scaffold
 ```
-
+5.5 or later:
 *Auto discovery*
+
+previous version
+```
+Yish\Scaffold\ScaffoldServiceProvider::class
+```
 
 # Publish config (require)
 ```
