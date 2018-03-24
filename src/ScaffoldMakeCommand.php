@@ -45,22 +45,7 @@ class ScaffoldMakeCommand extends Command
         //make model, factory, migration
         $this->call('make:model', [
             'name' => $this->argument('class'),
-        ]);
-
-        $this->call('make:factory', [
-            'name' => $this->argument('class') . 'Factory',
-        ]);
-
-        $table = Str::plural(Str::snake(class_basename($this->argument('class'))));
-
-        $this->call('make:migration', [
-            'name' => "create_{$table}_table",
-            '--create' => $table,
-        ]);
-
-        $this->call('make:controller', [
-            'name' => $this->argument('class') . 'Controller',
-            '-r' => true,
+            '--all' => true,
         ]);
 
         //make controller.
