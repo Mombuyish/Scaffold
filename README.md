@@ -1,3 +1,5 @@
+<p align="center"><img src="https://i.imgur.com/0TEljAG.png"></p>
+
 # Scaffold
 Super fast build CRUD resource for Laravel.
 
