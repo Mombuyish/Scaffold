@@ -9,7 +9,7 @@ class DummyClassController extends Controller
 {
     public function index()
     {
-        $DummyProp = DummyClass::latest()->paginate(12);
+        $DummyLowerClass = DummyClass::latest()->paginate(12);
 
         return view('DummyLowerClass.index', compact('DummyLowerClass'));
     }
@@ -28,7 +28,7 @@ class DummyClassController extends Controller
 
     public function edit(DummyClass $DummyProp)
     {
-        return view('DummyLowerClass.edit', compact('DummyLowerClass'));
+        return view('DummyLowerClass.edit', compact('DummyProp'));
     }
 
     public function update(DummyClassRequest $request, DummyClass $DummyProp)
@@ -40,7 +40,7 @@ class DummyClassController extends Controller
 
     public function show(DummyClass $DummyProp)
     {
-        return view('DummyLowerClass.show', compact('DummyLowerClass'));
+        return view('DummyLowerClass.show', compact('DummyProp'));
     }
 
     public function destroy(DummyClass $DummyProp)

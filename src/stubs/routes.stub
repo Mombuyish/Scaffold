@@ -1,2 +1,2 @@
 
-Route::resource('DummyLowerClasss', 'DummyClassController');
+Route::resource('PluralSnakeClass', 'ControllerClass');

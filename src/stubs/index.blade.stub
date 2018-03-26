@@ -9,12 +9,12 @@
         </div>
 
         <div class="list-group">
-            @foreach($DummyLowerClasss as $DummyLowerClass)
-                <a href="{{ route('DummyLowerClasss.show', $DummyLowerClass->id) }}"
+            @foreach($PluralSnakeClass as $SnakeClass)
+                <a href="{{ route('PluralSnakeClass.show', $SnakeClass->id) }}"
                    class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ $DummyLowerClass->title }}</h5>
-                        <small>{{ $DummyLowerClass->created_at->diffForHumans() }}</small>
+                        <h5 class="mb-1">{{ $SnakeClass->title }}</h5>
+                        <small>{{ $SnakeClass->created_at->diffForHumans() }}</small>
                     </div>
                 </a>
             @endforeach
@@ -22,7 +22,7 @@
 
         <div class="mt-2">
             <nav aria-label="Page navigation example">
-                {{ $DummyLowerClasss->links() }}
+                {{ $PluralSnakeClass->links() }}
             </nav>
         </div>
     </div>
