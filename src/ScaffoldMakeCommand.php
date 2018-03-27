@@ -40,9 +40,6 @@ class ScaffoldMakeCommand extends Command
     {
         $this->createRequest();
         $this->createModel();
-        $this->createFactory();
-        $this->createMigration();
-        $this->createController();
 
         $this->updateDummyNameController();
 
@@ -70,6 +67,9 @@ class ScaffoldMakeCommand extends Command
         file_put_contents(base_path('resources/views/' . $name . '/' . $view . '.blade.php'), $created);
     }
 
+    /**
+     * @deprecated
+     */
     protected function createFactory()
     {
         $this->call('make:factory', [
@@ -78,6 +78,9 @@ class ScaffoldMakeCommand extends Command
         ]);
     }
 
+    /**
+     * @deprecated
+     */
     protected function createMigration()
     {
         $table = Str::plural(Str::snake(class_basename($this->argument('class'))));
@@ -88,6 +91,9 @@ class ScaffoldMakeCommand extends Command
         ]);
     }
 
+    /**
+     * @deprecated
+     */
     protected function createController()
     {
         $controller = Str::studly(class_basename($this->argument('class')));
@@ -102,6 +108,7 @@ class ScaffoldMakeCommand extends Command
     {
         $this->call('make:model', [
             'name' => $this->argument('class'),
+            '--all' => true,
         ]);
     }
 
