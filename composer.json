@@ -3,7 +3,10 @@
     "description": "Super fast build CRUD resource for Laravel.",
     "license": "MIT",
     "require": {
-        "laravel/laravel": "5.*"
+        "php": ">=7",
+        "illuminate/support": "5.*",
+        "illuminate/console": "5.*",
+        "illuminate/filesystem": "5.*"
     },
     "authors": [
         {
